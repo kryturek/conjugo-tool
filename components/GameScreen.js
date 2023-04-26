@@ -14,102 +14,6 @@ import { clean } from "diacritic";
 import SubmitButton from "./SubmitButton";
 import UserInput from "./UserInput";
 
-const verbs = ["hablar", "comer", "vivir", "andar"];
-
-const getRandomVerb = () => {
-	const randomIndex = Math.floor(Math.random() * verbs.length);
-	return verbs[randomIndex];
-};
-
-const getRandomMoodAndTense = () => {
-	const tenses = [
-		{
-			mood: "indicative",
-			tense: "present",
-		},
-		{
-			mood: "indicative",
-			tense: "imperfect",
-		},
-		{
-			mood: "indicative",
-			tense: "preterite",
-		},
-		{
-			mood: "indicative",
-			tense: "future",
-		},
-		{
-			mood: "indicative",
-			tense: "present_perfect",
-		},
-		{
-			mood: "indicative",
-			tense: "past_perfect",
-		},
-		// {
-		// 	mood: "indicative",
-		// 	tense: "past_anterior",
-		// },
-		// {
-		// 	mood: "indicative",
-		// 	tense: "future_perfect",
-		// },
-		{
-			mood: "conditional",
-			tense: "simple_conditional",
-		},
-		// {
-		// 	mood: "conditional",
-		// 	tense: "perfect",
-		// },
-		{
-			mood: "imperitive",
-			tense: "affirmative",
-		},
-		{
-			mood: "imperative",
-			tense: "negative",
-		},
-		{
-			mood: "subjunctive",
-			tense: "present",
-		},
-		// {
-		// 	mood: "subjunctive",
-		// 	tense: "present_perfect",
-		// },
-		// {
-		// 	mood: "subjunctive",
-		// 	tense: "pluperfect",
-		// },
-		//  {
-		// 	"mood": "subjunctive",
-		// 	"tense": "future_perfect"
-		//  },
-		// {
-		// 	mood: "subjunctive",
-		// 	tense: "imperfect",
-		// },
-		// {
-		// 	mood: "subjunctive",
-		// 	tense: "imperfect_se",
-		// },
-		// {
-		// 	mood: "subjunctive",
-		// 	tense: "future",
-		// },
-	];
-	const randomIndex = Math.floor(Math.random() * tenses.length);
-	return tenses[randomIndex];
-};
-
-const getRandomPerformer = () => {
-	const performers = ["yo", "tu", "usted", "nosotros", "vosotros", "ustedes"];
-	const randomIndex = Math.floor(Math.random() * performers.length);
-	return performers[randomIndex];
-};
-
 const GameScreen = () => {
 	const [infinitive, setInfinitive] = useState("");
 	const [mood, setMood] = useState("");
@@ -119,6 +23,7 @@ const GameScreen = () => {
 	const [feedback, setFeedback] = useState("");
 	const [streak, setStreak] = useState(0);
 	const [highestStreak, setHighestStreak] = useState(0);
+	const [imperative, setImperative] = useState(false);
 
 	useEffect(() => {
 		const newInfinitive = getRandomVerb();
@@ -133,7 +38,115 @@ const GameScreen = () => {
 		setAnswer("");
 		setFeedback("");
 		setStreak(0);
+		setImperative(false);
 	}, []);
+
+	const verbs = ["hablar", "comer", "vivir", "andar"];
+
+	const getRandomVerb = () => {
+		const randomIndex = Math.floor(Math.random() * verbs.length);
+		return verbs[randomIndex];
+	};
+
+	const getRandomMoodAndTense = () => {
+		const tenses = [
+			{
+				mood: "indicative",
+				tense: "present",
+			},
+			{
+				mood: "indicative",
+				tense: "imperfect",
+			},
+			{
+				mood: "indicative",
+				tense: "preterite",
+			},
+			{
+				mood: "indicative",
+				tense: "future",
+			},
+			{
+				mood: "indicative",
+				tense: "present_perfect",
+			},
+			{
+				mood: "indicative",
+				tense: "past_perfect",
+			},
+			// {
+			// 	mood: "indicative",
+			// 	tense: "past_anterior",
+			// },
+			// {
+			// 	mood: "indicative",
+			// 	tense: "future_perfect",
+			// },
+			{
+				mood: "conditional",
+				tense: "simple_conditional",
+			},
+			{
+				mood: "conditional",
+				tense: "perfect",
+			},
+			{
+				mood: "imperative",
+				tense: "affirmative",
+			},
+			{
+				mood: "imperative",
+				tense: "negative",
+			},
+			// {
+			// 	mood: "subjunctive",
+			// 	tense: "present",
+			// },
+			// {
+			// 	mood: "subjunctive",
+			// 	tense: "present_perfect",
+			// },
+			// {
+			// 	mood: "subjunctive",
+			// 	tense: "pluperfect",
+			// },
+			//  {
+			// 	"mood": "subjunctive",
+			// 	"tense": "future_perfect"
+			//  },
+			// {
+			// 	mood: "subjunctive",
+			// 	tense: "imperfect",
+			// },
+			// {
+			// 	mood: "subjunctive",
+			// 	tense: "imperfect_se",
+			// },
+			// {
+			// 	mood: "subjunctive",
+			// 	tense: "future",
+			// },
+		];
+		const randomIndex = Math.floor(Math.random() * tenses.length);
+		if (tenses[randomIndex].mood == "imperative") setImperative(true);
+		return tenses[randomIndex];
+	};
+
+	const getRandomPerformer = () => {
+		const performers = [
+			"yo",
+			"tu",
+			"usted",
+			"nosotros",
+			"vosotros",
+			"ustedes",
+		];
+		// const randomIndex = Math.floor(Math.random() * performers.length);
+		const randomIndex = imperative
+			? Math.floor(Math.random() * (performers.length - 1) + 1)
+			: Math.floor(Math.random() * performers.length);
+		return performers[randomIndex];
+	};
 
 	const handleSubmit = () => {
 		const correctAnswer = SpanishConjugator.SpanishConjugator(
@@ -206,7 +219,7 @@ const styles = StyleSheet.create({
 	streakText: {
 		fontSize: 30,
 		color: "#222",
-		fontWeight: 'bold',
+		fontWeight: "bold",
 	},
 	infinitive: {
 		backgroundColor: "#39393a",
