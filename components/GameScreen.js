@@ -9,6 +9,7 @@ import {
 	Keyboard,
 	Alert,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import SpanishConjugator from "spanishconjugator";
 import { clean } from "diacritic";
 import SubmitButton from "./SubmitButton";
@@ -25,6 +26,32 @@ const GameScreen = () => {
 	const [highestStreak, setHighestStreak] = useState(0);
 	const [imperative, setImperative] = useState(false);
 
+	const loadHighestStreak = async () => {
+		try {
+			const val = await AsyncStorage.getItem("highestStreak");
+			if (val !== null) {
+				setHighestStreak(val);
+			} else {
+				setHighestStreak(0);
+			}
+		} catch (err) {
+			alert(err);
+		}
+	};
+
+	const saveHighestStreak = async () => {
+		try {
+			await AsyncStorage.setItem("highestStreak", highestStreak.toString());
+		} catch (err) {
+			alert(err);
+		}
+		// try {
+		// 	await AsyncStorage.setItem("highestStreak", highestStreak);
+		// } catch (err) {
+		// 	alert(err);
+		// }
+	};
+
 	useEffect(() => {
 		const newInfinitive = getRandomVerb();
 		const newMoodAndTense = getRandomMoodAndTense();
@@ -39,6 +66,7 @@ const GameScreen = () => {
 		setFeedback("");
 		setStreak(0);
 		setImperative(false);
+		loadHighestStreak();
 	}, []);
 
 	const verbs = ["hablar", "comer", "vivir", "andar"];
@@ -62,18 +90,18 @@ const GameScreen = () => {
 				mood: "indicative",
 				tense: "preterite",
 			},
-			{
-				mood: "indicative",
-				tense: "future",
-			},
-			{
-				mood: "indicative",
-				tense: "present_perfect",
-			},
-			{
-				mood: "indicative",
-				tense: "past_perfect",
-			},
+			// {
+			// 	mood: "indicative",
+			// 	tense: "future",
+			// },
+			// {
+			// 	mood: "indicative",
+			// 	tense: "present_perfect",
+			// },
+			// {
+			// 	mood: "indicative",
+			// 	tense: "past_perfect",
+			// },
 			// {
 			// 	mood: "indicative",
 			// 	tense: "past_anterior",
@@ -82,22 +110,22 @@ const GameScreen = () => {
 			// 	mood: "indicative",
 			// 	tense: "future_perfect",
 			// },
-			{
-				mood: "conditional",
-				tense: "simple_conditional",
-			},
-			{
-				mood: "conditional",
-				tense: "perfect",
-			},
-			{
-				mood: "imperative",
-				tense: "affirmative",
-			},
-			{
-				mood: "imperative",
-				tense: "negative",
-			},
+			// {
+			// 	mood: "conditional",
+			// 	tense: "simple_conditional",
+			// },
+			// {
+			// 	mood: "conditional",
+			// 	tense: "perfect",
+			// },
+			// {
+			// 	mood: "imperative",
+			// 	tense: "affirmative",
+			// },
+			// {
+			// 	mood: "imperative",
+			// 	tense: "negative",
+			// },
 			// {
 			// 	mood: "subjunctive",
 			// 	tense: "present",
@@ -155,6 +183,7 @@ const GameScreen = () => {
 			mood,
 			performer
 		);
+		// console.log("streak before block: " + streak);
 		const normalisedUserAnswer = answer.toLowerCase().trim();
 		const normalisedCorrectAnswer = correctAnswer.toLowerCase();
 		if (normalisedUserAnswer === normalisedCorrectAnswer) {
@@ -182,13 +211,22 @@ const GameScreen = () => {
 		setTense(newTense);
 		setPerformer(newPerformer);
 		setAnswer("");
+
 	};
+	
+	if (streak > highestStreak) {
+		setHighestStreak(streak);
+		saveHighestStreak();
+	}
 
 	return (
 		<TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
 			<View style={styles.container}>
 				<View style={styles.streakContainer}>
 					<Text style={styles.streakText}>{streak}</Text>
+				</View>
+				<View style={styles.highestStreakContainer}>
+					<Text style={styles.highestStreakText}>{highestStreak}</Text>
 				</View>
 				<Text style={styles.infinitive}>{infinitive}</Text>
 				<Text style={styles.mood_tense}>
@@ -217,6 +255,19 @@ const styles = StyleSheet.create({
 		zIndex: 1,
 	},
 	streakText: {
+		fontSize: 30,
+		color: "#222",
+		fontWeight: "bold",
+	},
+	highestStreakContainer: {
+		position: "absolute",
+		top: 50,
+		right: 20,
+		padding: 10,
+		backgroundColor: "#aa22aa",
+		zIndex: 1,
+	},
+	highestStreakText: {
 		fontSize: 30,
 		color: "#222",
 		fontWeight: "bold",
