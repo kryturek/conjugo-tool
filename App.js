@@ -3,6 +3,7 @@ import GameScreen from "./components/GameScreen";
 import VocabScreen from "./components/VocabScreen";
 import VerbsScreen from "./components/VerbsScreen";
 import SettingsScreen from "./components/SettingsScreen";
+import ListWithCheckboxes from "./components/ListWithCheckboxes";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
@@ -79,6 +80,19 @@ export default function App() {
 								<Octicon name="gear" size={56} color={color} />
 							) : (
 								<Octicon name="gear" size={56} color={color} />
+							);
+						},
+					}}
+				/>
+				<Tab.Screen
+					name="ListWithCheckboxes"
+					component={ListWithCheckboxes}
+					options={{
+						tabBarIcon: ({ focused, color, size }) => {
+							return focused ? (
+								<Octicon name="question" size={56} color={color} />
+							) : (
+								<Octicon name="question" size={56} color={color} />
 							);
 						},
 					}}

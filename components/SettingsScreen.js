@@ -1,15 +1,28 @@
 import { Text, View, StyleSheet } from "react-native";
+// import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import GameScreen from "./GameScreen";
+import VerbsScreen from "./VerbsScreen";
+import VocabScreen from "./VocabScreen";
+
+const Stack = createNativeStackNavigator();
 
 export default function SettingsScreen() {
 	return (
-		<View style={styles.container}>
-			<Text>Settings screen</Text>
-		</View>
-	)
+		<Stack.Navigator>
+		  {/* <Stack.Screen name="Home" component={GameScreen} /> */}
+		  <Stack.Screen name="Notifications" component={VerbsScreen} />
+		  <Stack.Screen name="Profile" component={VocabScreen} />
+		  <Stack.Screen name="Settings" component={SettingsScreen} />
+		</Stack.Navigator>
+		// <View>
+		// 	<Text>hello</Text>
+		// </View>
+	);
 }
 
 const styles = StyleSheet.create({
 	container: {
 		padding: 50,
-	}
-})
+	},
+});

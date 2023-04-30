@@ -11,6 +11,7 @@
   "dependencies": {
     "@expo-google-fonts/courgette": "^0.2.3",
     "@react-native-async-storage/async-storage": "^1.18.1",
+    "@react-native-community/checkbox": "^0.5.15",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-picker/picker": "^2.4.10",
     "@react-navigation/bottom-tabs": "^6.5.7",
@@ -30,7 +31,8 @@
     "react-native-screens": "~3.20.0",
     "react-native-vector-icons": "^9.2.0",
     "react-navigation-stack": "^2.10.4",
-    "spanishconjugator": "^2.0.1"
+    "spanishconjugator": "^2.0.1",
+    "expo-checkbox": "~2.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
