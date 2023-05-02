@@ -11,9 +11,8 @@ export default function SettingsScreen() {
 	return (
 		<Stack.Navigator>
 		  {/* <Stack.Screen name="Home" component={GameScreen} /> */}
-		  <Stack.Screen name="Notifications" component={VerbsScreen} />
+		  <Stack.Screen name="VerbsScreen" component={VerbsScreen} />
 		  <Stack.Screen name="Profile" component={VocabScreen} />
-		  <Stack.Screen name="Settings" component={SettingsScreen} />
 		</Stack.Navigator>
 		// <View>
 		// 	<Text>hello</Text>
