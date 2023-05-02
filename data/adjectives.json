@@ -1,0 +1,155 @@
+[
+	{
+	  "word": "bueno",
+	  "translation": "good"
+	},
+	{
+	  "word": "malo",
+	  "translation": "bad"
+	},
+	{
+	  "word": "grande",
+	  "translation": "big"
+	},
+	{
+	  "word": "pequeño",
+	  "translation": "small"
+	},
+	{
+	  "word": "alto",
+	  "translation": "tall"
+	},
+	{
+	  "word": "bajo",
+	  "translation": "short"
+	},
+	{
+	  "word": "delgado",
+	  "translation": "thin"
+	},
+	{
+	  "word": "gordo",
+	  "translation": "fat"
+	},
+	{
+	  "word": "bonito",
+	  "translation": "pretty"
+	},
+	{
+	  "word": "feo",
+	  "translation": "ugly"
+	},
+	{
+	  "word": "joven",
+	  "translation": "young"
+	},
+	{
+	  "word": "viejo",
+	  "translation": "old"
+	},
+	{
+	  "word": "fuerte",
+	  "translation": "strong"
+	},
+	{
+	  "word": "débil",
+	  "translation": "weak"
+	},
+	{
+	  "word": "rápido",
+	  "translation": "fast"
+	},
+	{
+	  "word": "lento",
+	  "translation": "slow"
+	},
+	{
+	  "word": "duro",
+	  "translation": "hard"
+	},
+	{
+	  "word": "suave",
+	  "translation": "soft"
+	},
+	{
+	  "word": "fácil",
+	  "translation": "easy"
+	},
+	{
+	  "word": "difícil",
+	  "translation": "difficult"
+	},
+	{
+	  "word": "caliente",
+	  "translation": "hot"
+	},
+	{
+	  "word": "frío",
+	  "translation": "cold"
+	},
+	{
+	  "word": "seco",
+	  "translation": "dry"
+	},
+	{
+	  "word": "húmedo",
+	  "translation": "wet"
+	},
+	{
+	  "word": "oscuro",
+	  "translation": "dark"
+	},
+	{
+	  "word": "claro",
+	  "translation": "light"
+	},
+	{
+	  "word": "nuevo",
+	  "translation": "new"
+	},
+	{
+	  "word": "viejo",
+	  "translation": "old"
+	},
+	{
+	  "word": "limpio",
+	  "translation": "clean"
+	},
+	{
+	  "word": "sucio",
+	  "translation": "dirty"
+	},
+	{
+	  "word": "salado",
+	  "translation": "salty"
+	},
+	{
+	  "word": "dulce",
+	  "translation": "sweet"
+	},
+	{
+	  "word": "agrio",
+	  "translation": "sour"
+	},
+	{
+	  "word": "amargo",
+	  "translation": "bitter"
+	},
+	{
+	  "word": "hermoso",
+	  "translation": "beautiful"
+	},
+	{
+	  "word": "fea",
+	  "translation": "ugly"
+	},
+	{
+	  "word": "tranquilo",
+	  "translation": "calm"
+	},
+	{
+	  "word": "ruidoso",
+	  "translation": "noisy"
+	}
+]
+ 

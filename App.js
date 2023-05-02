@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import GameScreen from "./components/GameScreen";
 import VocabScreen from "./components/VocabScreen";
+import VocabStack from "./routes/VocabStack";
 import VerbsScreen from "./components/VerbsScreen";
 import SettingsScreen from "./components/SettingsScreen";
 import ListWithCheckboxes from "./components/ListWithCheckboxes";
@@ -60,7 +61,7 @@ export default function App() {
 				/>
 				<Tab.Screen
 					name="Vocabulary"
-					component={VocabScreen}
+					component={VocabStack}
 					options={{
 						tabBarIcon: ({ focused, color, size }) => {
 							return focused ? (

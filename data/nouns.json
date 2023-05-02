@@ -1,0 +1,170 @@
+[
+	{
+		"word": "mesa",
+		"translation": "table"
+	},
+	{
+		"word": "silla",
+		"translation": "chair"
+	},
+	{
+		"word": "libro",
+		"translation": "book"
+	},
+	{
+	  "word": "casa",
+	  "translation": "house"
+	},
+	{
+	  "word": "coche",
+	  "translation": "car"
+	},
+	{
+	  "word": "perro",
+	  "translation": "dog"
+	},
+	{
+	  "word": "gato",
+	  "translation": "cat"
+	},
+	{
+	  "word": "comida",
+	  "translation": "food"
+	},
+	{
+	  "word": "agua",
+	  "translation": "water"
+	},
+	{
+	  "word": "amigo",
+	  "translation": "friend"
+	},
+	{
+	  "word": "ciudad",
+	  "translation": "city"
+	},
+	{
+	  "word": "calle",
+	  "translation": "street"
+	},
+	{
+	  "word": "trabajo",
+	  "translation": "work"
+	},
+	{
+	  "word": "mesa",
+	  "translation": "table"
+	},
+	{
+	  "word": "libro",
+	  "translation": "book"
+	},
+	{
+	  "word": "ropa",
+	  "translation": "clothes"
+	},
+	{
+	  "word": "mano",
+	  "translation": "hand"
+	},
+	{
+	  "word": "cama",
+	  "translation": "bed"
+	},
+	{
+	  "word": "aire",
+	  "translation": "air"
+	},
+	{
+	  "word": "mundo",
+	  "translation": "world"
+	},
+	{
+	  "word": "ropa",
+	  "translation": "clothes"
+	},
+	{
+	  "word": "mes",
+	  "translation": "month"
+	},
+	{
+	  "word": "café",
+	  "translation": "coffee"
+	},
+	{
+	  "word": "chocolate",
+	  "translation": "chocolate"
+	},
+	{
+	  "word": "bici",
+	  "translation": "bike"
+	},
+	{
+	  "word": "música",
+	  "translation": "music"
+	},
+	{
+	  "word": "padre",
+	  "translation": "father"
+	},
+	{
+	  "word": "madre",
+	  "translation": "mother"
+	},
+	{
+	  "word": "hermano",
+	  "translation": "brother"
+	},
+	{
+	  "word": "hermana",
+	  "translation": "sister"
+	},
+	{
+	  "word": "hijo",
+	  "translation": "son"
+	},
+	{
+	  "word": "hija",
+	  "translation": "daughter"
+	},
+	{
+	  "word": "hombre",
+	  "translation": "man"
+	},
+	{
+	  "word": "mujer",
+	  "translation": "woman"
+	},
+	{
+	  "word": "niño",
+	  "translation": "boy"
+	},
+	{
+	  "word": "niña",
+	  "translation": "girl"
+	},
+	{
+	  "word": "ojo",
+	  "translation": "eye"
+	},
+	{
+	  "word": "oreja",
+	  "translation": "ear"
+	},
+	{
+	  "word": "nariz",
+	  "translation": "nose"
+	},
+	{
+	  "word": "boca",
+	  "translation": "mouth"
+	},
+	{
+	  "word": "cuerpo",
+	  "translation": "body"
+	},
+	{
+	  "word": "cabeza",
+	  "translation": "head"
+	}
+]

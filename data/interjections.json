@@ -1,0 +1,22 @@
+[
+	{ "word": "¡Hola!", "translation": "Hello!" },
+	{ "word": "¡Adiós!", "translation": "Goodbye!" },
+	{ "word": "¡Gracias!", "translation": "Thank you!" },
+	{ "word": "¡Lo siento!", "translation": "I'm sorry!" },
+	{ "word": "¡Bien hecho!", "translation": "Well done!" },
+	{ "word": "¡Buen provecho!", "translation": "Enjoy your meal!" },
+	{ "word": "¡Felicitaciones!", "translation": "Congratulations!" },
+	{ "word": "¡Salud!", "translation": "Cheers!" },
+	{ "word": "¡Guau!", "translation": "Wow!" },
+	{ "word": "¡Vaya!", "translation": "Wow!" },
+	{ "word": "¡Qué bueno!", "translation": "How nice!" },
+	{ "word": "¡Qué lindo!", "translation": "How cute!" },
+	{ "word": "¡Qué lastima!", "translation": "What a shame!" },
+	{ "word": "¡Qué suerte!", "translation": "How lucky!" },
+	{ "word": "¡Qué divertido!", "translation": "How fun!" },
+	{ "word": "¡Basta!", "translation": "Enough!" },
+	{ "word": "¡Cuidado!", "translation": "Be careful!" },
+	{ "word": "¡Silencio!", "translation": "Silence!" },
+	{ "word": "¡Callate!", "translation": "Shut up!" },
+	{ "word": "¡Mira!", "translation": "Look!" }
+]

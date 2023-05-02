@@ -1,0 +1,39 @@
+[
+	{
+	  "word": "hola",
+	  "translation": "hello",
+	  "example": "¡Hola! ¿Cómo estás?",
+	  "exampleTranslation": "Hello! How are you?"
+	},
+	{
+	  "word": "adiós",
+	  "translation": "goodbye",
+	  "example": "Adiós, nos vemos pronto",
+	  "exampleTranslation": "Goodbye, see you soon"
+	},
+	{
+	  "word": "gracias",
+	  "translation": "thank you",
+	  "example": "Muchas gracias por tu ayuda",
+	  "exampleTranslation": "Thank you very much for your help"
+	},
+	{
+	  "word": "por favor",
+	  "translation": "please",
+	  "example": "Por favor, ¿me puedes pasar la sal?",
+	  "exampleTranslation": "Please, can you pass me the salt?"
+	},
+	{
+	  "word": "perro",
+	  "translation": "dog",
+	  "example": "Mi perro se llama Max",
+	  "exampleTranslation": "My dog's name is Max"
+	},
+	{
+	  "word": "gato",
+	  "translation": "cat",
+	  "example": "Mi gato es muy cariñoso",
+	  "exampleTranslation": "My cat is very affectionate"
+	}
+ ]
+ 
