@@ -14,8 +14,9 @@ import SpanishConjugator from "spanishconjugator";
 import { clean } from "diacritic";
 import SubmitButton from "./SubmitButton";
 import UserInput from "./UserInput";
+import levenshtein from "damerau-levenshtein";
 
-const GameScreen = () => {
+const GameScreen = ({ selectedTenses }) => {
 	const [infinitive, setInfinitive] = useState("");
 	const [mood, setMood] = useState("");
 	const [performer, setPerformer] = useState("");
@@ -77,84 +78,7 @@ const GameScreen = () => {
 	};
 
 	const getRandomMoodAndTense = () => {
-		const tenses = [
-			{
-				mood: "indicative",
-				tense: "present",
-			},
-			{
-				mood: "indicative",
-				tense: "imperfect",
-			},
-			{
-				mood: "indicative",
-				tense: "preterite",
-			},
-			// {
-			// 	mood: "indicative",
-			// 	tense: "future",
-			// },
-			// {
-			// 	mood: "indicative",
-			// 	tense: "present_perfect",
-			// },
-			// {
-			// 	mood: "indicative",
-			// 	tense: "past_perfect",
-			// },
-			// {
-			// 	mood: "indicative",
-			// 	tense: "past_anterior",
-			// },
-			// {
-			// 	mood: "indicative",
-			// 	tense: "future_perfect",
-			// },
-			// {
-			// 	mood: "conditional",
-			// 	tense: "simple_conditional",
-			// },
-			// {
-			// 	mood: "conditional",
-			// 	tense: "perfect",
-			// },
-			// {
-			// 	mood: "imperative",
-			// 	tense: "affirmative",
-			// },
-			// {
-			// 	mood: "imperative",
-			// 	tense: "negative",
-			// },
-			// {
-			// 	mood: "subjunctive",
-			// 	tense: "present",
-			// },
-			// {
-			// 	mood: "subjunctive",
-			// 	tense: "present_perfect",
-			// },
-			// {
-			// 	mood: "subjunctive",
-			// 	tense: "pluperfect",
-			// },
-			//  {
-			// 	"mood": "subjunctive",
-			// 	"tense": "future_perfect"
-			//  },
-			// {
-			// 	mood: "subjunctive",
-			// 	tense: "imperfect",
-			// },
-			// {
-			// 	mood: "subjunctive",
-			// 	tense: "imperfect_se",
-			// },
-			// {
-			// 	mood: "subjunctive",
-			// 	tense: "future",
-			// },
-		];
+		const tenses = selectedTenses;
 		const randomIndex = Math.floor(Math.random() * tenses.length);
 		if (tenses[randomIndex].mood == "imperative") setImperative(true);
 		return tenses[randomIndex];
@@ -169,7 +93,6 @@ const GameScreen = () => {
 			"vosotros",
 			"ustedes",
 		];
-		// const randomIndex = Math.floor(Math.random() * performers.length);
 		const randomIndex = imperative
 			? Math.floor(Math.random() * (performers.length - 1) + 1)
 			: Math.floor(Math.random() * performers.length);
@@ -183,19 +106,20 @@ const GameScreen = () => {
 			mood,
 			performer
 		);
-		// console.log("streak before block: " + streak);
 		const normalisedUserAnswer = answer.toLowerCase().trim();
 		const normalisedCorrectAnswer = correctAnswer.toLowerCase();
 		if (normalisedUserAnswer === normalisedCorrectAnswer) {
 			setFeedback(`${answer.trim()} is correct!`);
 			setStreak(streak + 1);
 		} else if (
-			clean(normalisedUserAnswer) === clean(normalisedCorrectAnswer)
+			clean(normalisedUserAnswer) === clean(normalisedCorrectAnswer) || levenshtein(normalisedUserAnswer, normalisedCorrectAnswer).similarity > 0.9
 		) {
 			setFeedback(
 				`Almost correct.\nThe correct answer is ${normalisedCorrectAnswer}, you wrote ${normalisedUserAnswer}.`
 			);
 			setStreak(streak + 1);
+		} else if (levenshtein(normalisedUserAnswer, normalisedCorrectAnswer).similarity > 0.6){
+			setFeedback(`Sorry, not close enough.\nThe correct answer is ${normalisedCorrectAnswer}, you wrote ${normalisedUserAnswer}.`)
 		} else {
 			setFeedback(`Incorrect.\nThe correct answer is ${correctAnswer}.`);
 			setStreak(0);

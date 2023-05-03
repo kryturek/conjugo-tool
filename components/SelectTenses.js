@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, FlatList, Alert } from 'react-native';
 import Checkbox from 'expo-checkbox';
 
 const data = [
@@ -24,21 +24,30 @@ const data = [
   { "mood": "subjunctive", "tense": "future" }
 ];
 
-const ListWithCheckboxes = () => {
-  const [selectedItems, setSelectedItems] = useState([]);
+const SelectTenses = ({selectedTenses, setSelectedTenses}) => {
+  // const [selectedItems, setSelectedItems] = useState([]);
+
+  useEffect(() => {
+    // set the first tense in the list to be selected by default
+    setSelectedTenses([data[0]]);
+  }, []);
 
   const handleCheckBoxPress = (item) => {
-    const isSelected = selectedItems.includes(item);
+    const isSelected = selectedTenses.includes(item);
+
+    if (isSelected && selectedTenses.length === 1) {
+      Alert.alert("At least one tense has to be selected!");
+      return;
+    }
     const updatedSelection = isSelected
-      ? selectedItems.filter((selected) => selected !== item)
-      : [...selectedItems, item];
-    setSelectedItems(updatedSelection);
-    console.log(selectedItems);
+      ? selectedTenses.filter((selected) => selected !== item)
+      : [...selectedTenses, item];
+      setSelectedTenses(updatedSelection);
   };
 
   const renderItem = ({ item }) => {
     const { mood, tense } = item;
-    const isSelected = selectedItems.includes(item);
+    const isSelected = selectedTenses.includes(item);
 
     return (
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -46,7 +55,7 @@ const ListWithCheckboxes = () => {
           value={isSelected}
           onValueChange={() => handleCheckBoxPress(item)}
         />
-        <Text>{`${mood} ${tense}`}</Text>
+        <Text>{`${mood} - ${tense.replace(/_/g, " ")}`}</Text>
       </View>
     );
   };
@@ -60,4 +69,4 @@ const ListWithCheckboxes = () => {
   );
 };
 
-export default ListWithCheckboxes;
+export default SelectTenses;

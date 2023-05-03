@@ -4,19 +4,15 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import GameScreen from "./GameScreen";
 import VerbsScreen from "./VerbsScreen";
 import VocabScreen from "./VocabScreen";
+import SelectTenses from "./SelectTenses";
 
 const Stack = createNativeStackNavigator();
 
-export default function SettingsScreen() {
+export default function SettingsScreen({selectedTenses, setSelectedTenses}) {
 	return (
-		<Stack.Navigator>
-		  {/* <Stack.Screen name="Home" component={GameScreen} /> */}
-		  <Stack.Screen name="VerbsScreen" component={VerbsScreen} />
-		  <Stack.Screen name="Profile" component={VocabScreen} />
-		</Stack.Navigator>
-		// <View>
-		// 	<Text>hello</Text>
-		// </View>
+		<View>
+			<SelectTenses selectedTenses={selectedTenses} setSelectedTenses={setSelectedTenses} />
+		</View>
 	);
 }
 

@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
 import GameScreen from "./components/GameScreen";
 import VocabScreen from "./components/VocabScreen";
 import VocabStack from "./routes/VocabStack";
 import VerbsScreen from "./components/VerbsScreen";
 import SettingsScreen from "./components/SettingsScreen";
-import ListWithCheckboxes from "./components/ListWithCheckboxes";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
@@ -15,15 +15,16 @@ const Tab = createBottomTabNavigator();
 
 
 export default function App() {
+
+	const [selectedTenses, setSelectedTenses] = useState([{ mood: "indicative", tense: "present" }]);
+	
 	const size = 46;
 	const color = "white";
+	
 	return (
 		<NavigationContainer>
 			<Tab.Navigator
 				initialRouteName="Game"
-				// activeColor="#ff8552"
-				// barStyle={{ backgroundColor: "#39393a" }}
-				// shifting={true}
 				screenOptions={() => ({
 					tabBarShowLabel: false,
 					tabBarStyle: {
@@ -34,7 +35,6 @@ export default function App() {
 			>
 				<Tab.Screen
 					name="Game"
-					component={GameScreen}
 					options={{
 						headerShown: false,
 						tabBarIcon: ({ focused, color, size }) => {
@@ -45,7 +45,9 @@ export default function App() {
 							);
 						},
 					}}
-				/>
+				>
+					{()=><GameScreen selectedTenses={selectedTenses} />}
+				</Tab.Screen>
 				<Tab.Screen
 					name="Verbs"
 					component={VerbsScreen}
@@ -74,7 +76,6 @@ export default function App() {
 				/>
 				<Tab.Screen
 					name="Settings"
-					component={SettingsScreen}
 					options={{
 						tabBarIcon: ({ focused, color, size }) => {
 							return focused ? (
@@ -84,8 +85,10 @@ export default function App() {
 							);
 						},
 					}}
-				/>
-				<Tab.Screen
+					>
+					{() => <SettingsScreen selectedTenses={selectedTenses} setSelectedTenses={setSelectedTenses} />}
+					</Tab.Screen>
+				{/* <Tab.Screen
 					name="ListWithCheckboxes"
 					component={ListWithCheckboxes}
 					options={{
@@ -97,7 +100,7 @@ export default function App() {
 							);
 						},
 					}}
-				/>
+				/> */}
 			</Tab.Navigator>
 		</NavigationContainer>
 	);
