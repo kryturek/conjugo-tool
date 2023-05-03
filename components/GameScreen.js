@@ -120,6 +120,7 @@ const GameScreen = ({ selectedTenses }) => {
 			setStreak(streak + 1);
 		} else if (levenshtein(normalisedUserAnswer, normalisedCorrectAnswer).similarity > 0.6){
 			setFeedback(`Sorry, not close enough.\nThe correct answer is ${normalisedCorrectAnswer}, you wrote ${normalisedUserAnswer}.`)
+			setStreak(0);
 		} else {
 			setFeedback(`Incorrect.\nThe correct answer is ${correctAnswer}.`);
 			setStreak(0);
