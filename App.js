@@ -65,6 +65,7 @@ export default function App() {
 					name="Vocabulary"
 					component={VocabStack}
 					options={{
+						headerShown: false,
 						tabBarIcon: ({ focused, color, size }) => {
 							return focused ? (
 								<Octicon name="book" size={56} color={color} />
