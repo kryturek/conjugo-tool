@@ -1,0 +1,503 @@
+[
+	{
+		"rank": 1,
+		"name": "ser",
+		"translation": "to be (essential/permanent quality)"
+	},	
+	{
+		"rank": 2,
+		"name": "estar",
+		"translation": "to be (health, location, state)"
+	},
+	{
+		"rank": 3,
+		"name": "haber",
+		"translation": "to have (to do something, auxiliary verb)"
+	},
+
+	{
+		"rank": 4,
+		"name": "tener",
+		"translation": "to have"
+	},
+	{
+		"rank": 5,
+		"name": "hacer",
+		"translation": "to do, make"
+	},
+	{
+		"rank": 6,
+		"name": "poder",
+		"translation": "to be able, can"
+	},
+	{
+		"rank": 7,
+		"name": "decir",
+		"translation": "to say, tell"
+	},
+	{
+		"rank": 8,
+		"name": "ir",
+		"translation": "to go"
+	},
+	{
+		"rank": 9,
+		"name": "ver",
+		"translation": "to see"
+	},
+	{
+		"rank": 10,
+		"name": "dar",
+		"translation": "to give"
+	},
+	{
+		"rank": 11,
+		"name": "saber",
+		"translation": "to know (information)"
+	},
+	{
+		"rank": 12,
+		"name": "querer",
+		"translation": "to want, love"
+	},
+	{
+		"rank": 13,
+		"name": "llegar",
+		"translation": "to arrive, come, reach"
+	},
+	{
+		"rank": 14,
+		"name": "pasar",
+		"translation": "to pass, to spend (time), to happen"
+	},
+	{
+		"rank": 15,
+		"name": "deber",
+		"translation": "to owe, must, should, ought to"
+	},
+	{
+		"rank": 16,
+		"name": "poner",
+		"translation": "to put, place, set"
+	},
+	{
+		"rank": 17,
+		"name": "parecer",
+		"translation": "to seem, appear"
+	},
+	{
+		"rank": 18,
+		"name": "quedar",
+		"translation": "to stay, remain"
+	},
+	{
+		"rank": 19,
+		"name": "creer",
+		"translation": "to believe"
+	},
+	{
+		"rank": 20,
+		"name": "hablar",
+		"translation": "to speak"
+	},
+	{
+		"rank": 21,
+		"name": "llevar",
+		"translation": "to carry, bring"
+	},
+	{
+		"rank": 22,
+		"name": "dejar",
+		"translation": "to leave, abandon, to let, allow"
+	},
+	{
+		"rank": 23,
+		"name": "seguir",
+		"translation": "to follow, continue"
+	},
+	{
+		"rank": 24,
+		"name": "encontrar",
+		"translation": "to find, encounter"
+	},
+	{
+		"rank": 25,
+		"name": "llamar",
+		"translation": "to call, to name"
+	},
+	{
+		"rank": 26,
+		"name": "venir",
+		"translation": "to come"
+	},
+	{
+		"rank": 27,
+		"name": "pensar",
+		"translation": "to think"
+	},
+	{
+		"rank": 28,
+		"name": "salir",
+		"translation": "to leave, go out"
+	},
+	{
+		"rank": 29,
+		"name": "volver",
+		"translation": "to return, go back"
+	},
+	{
+		"rank": 30,
+		"name": "tomar",
+		"translation": "to take, drink"
+	},
+	{
+		"rank": 31,
+		"name": "conocer",
+		"translation": "to know (people, places)"
+	},
+	{
+		"rank": 32,
+		"name": "vivir",
+		"translation": "to live"
+	},
+	{
+		"rank": 33,
+		"name": "sentir",
+		"translation": "to feel, regret"
+	},
+	{
+		"rank": 34,
+		"name": "tratar",
+		"translation": "to treat, handle"
+	},
+	{
+		"rank": 35,
+		"name": "mirar",
+		"translation": "to watch, look at"
+	},
+	{
+		"rank": 36,
+		"name": "contar",
+		"translation": "to count, relate, tell"
+	},
+	{
+		"rank": 37,
+		"name": "empezar",
+		"translation": "to begin, start"
+	},
+	{
+		"rank": 38,
+		"name": "esperar",
+		"translation": "to wait for, to hope"
+	},
+	{
+		"rank": 39,
+		"name": "buscar",
+		"translation": "to search for, look for"
+	},
+	{
+		"rank": 40,
+		"name": "existir",
+		"translation": "to exist"
+	},
+	{
+		"rank": 41,
+		"name": "entrar",
+		"translation": "to enter, go in, come in"
+	},
+	{
+		"rank": 42,
+		"name": "trabajar",
+		"translation": "to work"
+	},
+	{
+		"rank": 43,
+		"name": "escribir",
+		"translation": "to write"
+	},
+	{
+		"rank": 44,
+		"name": "perder",
+		"translation": "to lose"
+	},
+	{
+		"rank": 45,
+		"name": "producir",
+		"translation": "to produce"
+	},
+	{
+		"rank": 46,
+		"name": "ocurrir",
+		"translation": "to occur, happen"
+	},
+	{
+		"rank": 47,
+		"name": "entender",
+		"translation": "to understand"
+	},
+	{
+		"rank": 48,
+		"name": "pedir",
+		"translation": "to request, ask for"
+	},
+	{
+		"rank": 49,
+		"name": "recibir",
+		"translation": "to receive, to welcome, greet"
+	},
+	{
+		"rank": 50,
+		"name": "recordar",
+		"translation": "to remember, remind"
+	},
+	{
+		"rank": 51,
+		"name": "terminar",
+		"translation": "to finish, end"
+	},
+	{
+		"rank": 52,
+		"name": "permitir",
+		"translation": "to permit, allow"
+	},
+	{
+		"rank": 53,
+		"name": "aparecer",
+		"translation": "to appear, show up"
+	},
+	{
+		"rank": 54,
+		"name": "conseguir",
+		"translation": "to get, obtain"
+	},
+	{
+		"rank": 55,
+		"name": "comenzar",
+		"translation": "to begin, start, commence"
+	},
+	{
+		"rank": 56,
+		"name": "servir",
+		"translation": "to serve"
+	},
+	{
+		"rank": 57,
+		"name": "sacar",
+		"translation": "to take out, stick out"
+	},
+	{
+		"rank": 58,
+		"name": "necesitar",
+		"translation": "to need, require"
+	},
+	{
+		"rank": 59,
+		"name": "mantener",
+		"translation": "to maintain, get"
+	},
+	{
+		"rank": 60,
+		"name": "resultar",
+		"translation": "to turn out (to be)"
+	},
+	{
+		"rank": 61,
+		"name": "leer",
+		"translation": "to read"
+	},
+	{
+		"rank": 62,
+		"name": "caer",
+		"translation": "to fall"
+	},
+	{
+		"rank": 63,
+		"name": "cambiar",
+		"translation": "to change"
+	},
+	{
+		"rank": 64,
+		"name": "presentar",
+		"translation": "to introduce"
+	},
+	{
+		"rank": 65,
+		"name": "crear",
+		"translation": "to create, to make"
+	},
+	{
+		"rank": 66,
+		"name": "abrir",
+		"translation": "to open"
+	},
+	{
+		"rank": 67,
+		"name": "considerar",
+		"translation": "to consider"
+	},
+	{
+		"rank": 68,
+		"name": "oír",
+		"translation": "to hear"
+	},
+	{
+		"rank": 69,
+		"name": "acabar",
+		"translation": "to finish, end"
+	},
+	{
+		"rank": 70,
+		"name": "convertir",
+		"translation": "to convert, change"
+	},
+	{
+		"rank": 71,
+		"name": "ganar",
+		"translation": "to win, gain, earn, get, acquire"
+	},
+	{
+		"rank": 72,
+		"name": "formar",
+		"translation": "to form, shape, fashion, make"
+	},
+	{
+		"rank": 73,
+		"name": "traer",
+		"translation": "to bring, to get, fetch, to carry"
+	},
+	{
+		"rank": 74,
+		"name": "partir",
+		"translation": "to divide, to leave"
+	},
+	{
+		"rank": 75,
+		"name": "morir",
+		"translation": "to die"
+	},
+	{
+		"rank": 76,
+		"name": "aceptar",
+		"translation": "to accept, approve, to agree to"
+	},
+	{
+		"rank": 77,
+		"name": "realizar",
+		"translation": "to achieve, attain, accomplish"
+	},
+	{
+		"rank": 78,
+		"name": "suponer",
+		"translation": "to suppose"
+	},
+	{
+		"rank": 79,
+		"name": "comprender",
+		"translation": "to understand, comprehend"
+	},
+	{
+		"rank": 80,
+		"name": "lograr",
+		"translation": "to get, obtain, to achieve, attain"
+	},
+	{
+		"rank": 81,
+		"name": "explicar",
+		"translation": "to explain"
+	},
+	{
+		"rank": 82,
+		"name": "preguntar",
+		"translation": "to ask, inquire"
+	},
+	{
+		"rank": 83,
+		"name": "tocar",
+		"translation": "to touch, to play (an instrument)"
+	},
+	{
+		"rank": 84,
+		"name": "reconocer",
+		"translation": "to recognize"
+	},
+	{
+		"rank": 85,
+		"name": "estudiar",
+		"translation": "to study"
+	},
+	{
+		"rank": 86,
+		"name": "alcanzar",
+		"translation": "to reach, catch up"
+	},
+	{
+		"rank": 87,
+		"name": "nacer",
+		"translation": "to be born"
+	},
+	{
+		"rank": 88,
+		"name": "dirigir",
+		"translation": "to direct"
+	},
+	{
+		"rank": 89,
+		"name": "correr",
+		"translation": "to run"
+	},
+	{
+		"rank": 90,
+		"name": "utilizar",
+		"translation": "to use, utilize"
+	},
+	{
+		"rank": 91,
+		"name": "pagar",
+		"translation": "to pay, pay for"
+	},
+	{
+		"rank": 92,
+		"name": "ayudar",
+		"translation": "to help"
+	},
+	{
+		"rank": 93,
+		"name": "gustar",
+		"translation": "to please, be pleasing"
+	},
+	{
+		"rank": 94,
+		"name": "jugar",
+		"translation": "to play (a game or sport)"
+	},
+	{
+		"rank": 95,
+		"name": "escuchar",
+		"translation": "to listen, hear"
+	},
+	{
+		"rank": 96,
+		"name": "cumplir",
+		"translation": "to fulfil, carry out"
+	},
+	{
+		"rank": 97,
+		"name": "ofrecer",
+		"translation": "to offer"
+	},
+	{
+		"rank": 98,
+		"name": "descubrir",
+		"translation": "to discover"
+	},
+	{
+		"rank": 99,
+		"name": "levantar",
+		"translation": "to raise, to lift"
+	},
+	{
+		"rank": 100,
+		"name": "intentar",
+		"translation": "to try, attempt"
+	}
+]

@@ -1,15 +1,16 @@
 import { Text, View, StyleSheet } from "react-native";
+import VerbList from "./VerbList";
 
 export default function VerbsScreen() {
 	return (
 		<View style={styles.container}>
-			<Text>Verbs screen</Text>
+			<VerbList />
 		</View>
 	)
 }
 
 const styles = StyleSheet.create({
 	container: {
-		padding: 50,
+		// paddingLeft: 10,
 	}
 })
