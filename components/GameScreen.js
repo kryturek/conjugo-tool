@@ -15,9 +15,11 @@ import { clean } from "diacritic";
 import SubmitButton from "./SubmitButton";
 import UserInput from "./UserInput";
 import levenshtein from "damerau-levenshtein";
+import verbs from "../data/verbs.json";
 
 const GameScreen = ({ selectedTenses }) => {
 	const [infinitive, setInfinitive] = useState("");
+	const [translation, setTranslation] = useState("");
 	const [mood, setMood] = useState("");
 	const [performer, setPerformer] = useState("");
 	const [tense, setTense] = useState("");
@@ -54,13 +56,16 @@ const GameScreen = ({ selectedTenses }) => {
 	};
 
 	useEffect(() => {
-		const newInfinitive = getRandomVerb();
+		const newVerb = getRandomVerb();
+		const newInfinitive = newVerb.name;
+		const newTranslation = newVerb.translation;
 		const newMoodAndTense = getRandomMoodAndTense();
 		const newMood = newMoodAndTense.mood;
 		const newTense = newMoodAndTense.tense;
 		const newPerformer = getRandomPerformer();
 		setMood(newMood);
 		setInfinitive(newInfinitive);
+		setTranslation(newTranslation);
 		setTense(newTense);
 		setPerformer(newPerformer);
 		setAnswer("");
@@ -70,7 +75,7 @@ const GameScreen = ({ selectedTenses }) => {
 		loadHighestStreak();
 	}, []);
 
-	const verbs = ["hablar", "comer", "vivir", "andar"];
+	// const verbs = ["hablar", "comer", "vivir", "andar"];
 
 	const getRandomVerb = () => {
 		const randomIndex = Math.floor(Math.random() * verbs.length);
@@ -112,33 +117,42 @@ const GameScreen = ({ selectedTenses }) => {
 			setFeedback(`${answer.trim()} is correct!`);
 			setStreak(streak + 1);
 		} else if (
-			clean(normalisedUserAnswer) === clean(normalisedCorrectAnswer) || levenshtein(normalisedUserAnswer, normalisedCorrectAnswer).similarity > 0.9
+			clean(normalisedUserAnswer) === clean(normalisedCorrectAnswer) ||
+			levenshtein(normalisedUserAnswer, normalisedCorrectAnswer).similarity >
+				0.9
 		) {
 			setFeedback(
 				`Almost correct.\nThe correct answer is ${normalisedCorrectAnswer}, you wrote ${normalisedUserAnswer}.`
 			);
 			setStreak(streak + 1);
-		} else if (levenshtein(normalisedUserAnswer, normalisedCorrectAnswer).similarity > 0.6){
-			setFeedback(`Sorry, not close enough.\nThe correct answer is ${normalisedCorrectAnswer}, you wrote ${normalisedUserAnswer}.`)
+		} else if (
+			levenshtein(normalisedUserAnswer, normalisedCorrectAnswer).similarity >
+			0.6
+		) {
+			setFeedback(
+				`Sorry, not close enough.\nThe correct answer is ${normalisedCorrectAnswer}, you wrote ${normalisedUserAnswer}.`
+			);
 			setStreak(0);
 		} else {
 			setFeedback(`Incorrect.\nThe correct answer is ${correctAnswer}.`);
 			setStreak(0);
 		}
 
-		const newInfinitive = getRandomVerb();
+		const newVerb = getRandomVerb();
+		const newInfinitive = newVerb.name;
+		const newTranslation = newVerb.translation;
 		const newPerformer = getRandomPerformer();
 		const newMoodAndTense = getRandomMoodAndTense();
 		const newMood = newMoodAndTense.mood;
 		const newTense = newMoodAndTense.tense;
 		setMood(newMood);
 		setInfinitive(newInfinitive);
+		setTranslation(newTranslation);
 		setTense(newTense);
 		setPerformer(newPerformer);
 		setAnswer("");
-
 	};
-	
+
 	if (streak > highestStreak) {
 		setHighestStreak(streak);
 		saveHighestStreak();
@@ -153,7 +167,11 @@ const GameScreen = ({ selectedTenses }) => {
 				<View style={styles.highestStreakContainer}>
 					<Text style={styles.highestStreakText}>{highestStreak}</Text>
 				</View>
-				<Text style={styles.infinitive}>{infinitive}</Text>
+				<View style={styles.verbView}>
+					<Text style={styles.infinitive}>{infinitive}</Text>
+					{/* <Text style={styles.translation}>{translation}</Text> */}
+				</View>
+
 				<Text style={styles.mood_tense}>
 					{mood} - {tense.replace(/_/g, " ")}
 				</Text>
@@ -196,6 +214,9 @@ const styles = StyleSheet.create({
 		fontSize: 30,
 		color: "#222",
 		fontWeight: "bold",
+	},
+	verbView: {
+		
 	},
 	infinitive: {
 		backgroundColor: "#39393a",
