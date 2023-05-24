@@ -1,3 +1,9 @@
+/*
+  The SelectTenses component renders a list of tenses with checkboxes and manages the selected tenses state. 
+  It allows the user to select or deselect tenses and updates the selected tenses accordingly. 
+  The component uses a FlatList to render the list of tenses and a handleCheckBoxPress function to handle checkbox selection.
+*/
+
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, Alert } from 'react-native';
 import Checkbox from 'expo-checkbox';

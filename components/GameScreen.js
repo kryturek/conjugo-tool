@@ -1,3 +1,17 @@
+/*
+	The GameScreen component is responsible for managing the game logic and rendering the game interface.
+
+		State variables are used to store various game-related information such as the infinitive, translation, mood, tense, answer, feedback, streak, highest streak, and imperative flag.
+		The component uses useEffect to set initial values and load the highest streak from AsyncStorage.
+		Helper functions are defined to get a random verb, random mood and tense, and random performer based on the imperative mood.
+		The handleSubmit function handles the user's submission. It compares the user's answer with the correct conjugation and provides feedback. It also generates new random values for the next question.
+		The highest streak is updated and saved to AsyncStorage if it exceeds the previous highest streak.
+		The component renders the game interface using various React Native components such as TouchableWithoutFeedback, View, Text, TextInput, Button, and custom components SubmitButton and UserInput.
+		Styles for the game interface are defined using StyleSheet.create.
+
+	In summary, the GameScreen component manages the game state, handles user input, provides feedback, and renders the game interface.
+*/
+
 import React, { useState, useEffect } from "react";
 import {
 	Text,
@@ -18,6 +32,7 @@ import levenshtein from "damerau-levenshtein";
 import verbs from "../data/verbs.json";
 
 const GameScreen = ({ selectedTenses }) => {
+	// State variables
 	const [infinitive, setInfinitive] = useState("");
 	const [translation, setTranslation] = useState("");
 	const [mood, setMood] = useState("");
@@ -29,6 +44,7 @@ const GameScreen = ({ selectedTenses }) => {
 	const [highestStreak, setHighestStreak] = useState(0);
 	const [imperative, setImperative] = useState(false);
 
+	// Load the highest streak from AsyncStorage
 	const loadHighestStreak = async () => {
 		try {
 			const val = await AsyncStorage.getItem("highestStreak");
@@ -42,19 +58,16 @@ const GameScreen = ({ selectedTenses }) => {
 		}
 	};
 
+	// Save the highest streak to AsyncStorage
 	const saveHighestStreak = async () => {
 		try {
 			await AsyncStorage.setItem("highestStreak", highestStreak.toString());
 		} catch (err) {
 			alert(err);
 		}
-		// try {
-		// 	await AsyncStorage.setItem("highestStreak", highestStreak);
-		// } catch (err) {
-		// 	alert(err);
-		// }
 	};
 
+	// Set initial values and load the highest streak
 	useEffect(() => {
 		const newVerb = getRandomVerb();
 		const newInfinitive = newVerb.name;
@@ -75,13 +88,13 @@ const GameScreen = ({ selectedTenses }) => {
 		loadHighestStreak();
 	}, []);
 
-	// const verbs = ["hablar", "comer", "vivir", "andar"];
-
+	// Get a random verb from the list of verbs
 	const getRandomVerb = () => {
 		const randomIndex = Math.floor(Math.random() * verbs.length);
 		return verbs[randomIndex];
 	};
 
+	// Get a random mood and tense from the selected tenses
 	const getRandomMoodAndTense = () => {
 		const tenses = selectedTenses;
 		const randomIndex = Math.floor(Math.random() * tenses.length);
@@ -89,6 +102,7 @@ const GameScreen = ({ selectedTenses }) => {
 		return tenses[randomIndex];
 	};
 
+	// Get a random performer based on the imperative mood
 	const getRandomPerformer = () => {
 		const performers = [
 			"yo",
@@ -105,6 +119,7 @@ const GameScreen = ({ selectedTenses }) => {
 	};
 
 	const handleSubmit = () => {
+		// Handle the user's submission
 		const correctAnswer = SpanishConjugator.SpanishConjugator(
 			infinitive,
 			tense,
@@ -138,6 +153,7 @@ const GameScreen = ({ selectedTenses }) => {
 			setStreak(0);
 		}
 
+		// Get new random values for the next question
 		const newVerb = getRandomVerb();
 		const newInfinitive = newVerb.name;
 		const newTranslation = newVerb.translation;
@@ -153,6 +169,7 @@ const GameScreen = ({ selectedTenses }) => {
 		setAnswer("");
 	};
 
+	// Update the highest streak and save it to AsyncStorage
 	if (streak > highestStreak) {
 		setHighestStreak(streak);
 		saveHighestStreak();
@@ -215,9 +232,7 @@ const styles = StyleSheet.create({
 		color: "#222",
 		fontWeight: "bold",
 	},
-	verbView: {
-		
-	},
+	verbView: {},
 	infinitive: {
 		backgroundColor: "#39393a",
 		color: "#e6e6e6",
