@@ -1,7 +1,5 @@
 # conjugo-tool
 
-SCHOOL PROJECT
-
 Project Description:  
 
     Title: Conjugo – Conjugation Tool  
